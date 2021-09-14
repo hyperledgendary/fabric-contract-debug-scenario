@@ -10,6 +10,12 @@
   "engines": {
     "node": ">=12.15.0"
   },
+  "fabric":{
+    "files": [
+      "lib/**/*"
+    ],
+    "label":"asset-transfer-basic"
+  },  
   "scripts": {
     "clean": "rimraf lib",
     "test": "nyc mocha -r ts-node/register src/**/*.spec.ts",
