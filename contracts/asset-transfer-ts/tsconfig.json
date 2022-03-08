@@ -8,7 +8,7 @@
         "es2017.object" 
       ],
       "target": "es2015",
-      "outDir": "./lib",
+      "outDir": "./dist",
       "removeComments": true,
       "inlineSourceMap": true,
       "inlineSources": true,

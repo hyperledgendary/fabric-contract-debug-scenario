@@ -1,9 +1,9 @@
 {
-  "name": "example-node-chaincode",
-  "version": "0.0.3",
-  "description": "Example Best Practice Smart Contract",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "name": "asset-transfer-basic",
+  "version": "1.0.0",
+  "description": "Asset Transfer Basic contract implemented in TypeScript",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "files": [
     "lib/**/*"
   ],
@@ -20,22 +20,26 @@
     "clean": "rimraf lib",
     "test": "nyc mocha -r ts-node/register src/**/*.spec.ts",
     "meta": "fabric-chaincode-node metadata generate",
-    "start": "fabric-chaincode-node start",
     "format": "prettier --write \"{src,test}/**/*.ts\"",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "build": "npm run format && npm run clean && npm run lint && echo Using TypeScript && tsc --version && tsc --pretty",
-    "package": "npm run build && npm shrinkwrap && weft package",
+    "package:cc": "./ccaas_pkg.sh",
+    "package:image": "npm run build && npm shrinkwrap && docker build -f ./Dockerfile -t asset-transfer-basic .",
     "release": "standard-version",
+    "start": "fabric-chaincode-node start",
     "start:server-nontls": "set -x && fabric-chaincode-node server --chaincode-address=$CHAINCODE_SERVER_ADDRESS --chaincode-id=$CHAINCODE_ID",
-    "start:server": "set -x && fabric-chaincode-node server --chaincode-address=$CHAINCODE_SERVER_ADDRESS --chaincode-id=$CHAINCODE_ID --chaincode-tls-key-file=/hyperledger/privatekey.pem --chaincode-tls-client-cacert-file=/hyperledger/rootcert.pem --chaincode-tls-cert-file=/hyperledger/cert.pem"
+    "start:server": "set -x && fabric-chaincode-node server --chaincode-address=$CHAINCODE_SERVER_ADDRESS --chaincode-id=$CHAINCODE_ID --chaincode-tls-key-file=/hyperledger/privatekey.pem --chaincode-tls-client-cacert-file=/hyperledger/rootcert.pem --chaincode-tls-cert-file=/hyperledger/cert.pem",
+    "start:server-debug": "set -x && NODE_OPTIONS='--inspect=0.0.0.0:9229' fabric-chaincode-node server --chaincode-address=$CHAINCODE_SERVER_ADDRESS --chaincode-id=$CHAINCODE_ID"
   },
   "engineStrict": true,
   "author": "whitemat@uk.ibm.com",
   "license": "Apache-2.0",
   "dependencies": {
-    "fabric-contract-api": "^2.2.1",
-    "fabric-shim": "^2.2.1",
-    "source-map-support": "^0.5.19"
+    "fabric-contract-api": "^2.4.0",
+    "fabric-shim": "^2.4.0",
+    "source-map-support": "^0.5.19",
+    "json-stringify-deterministic": "^1.0.1",
+    "sort-keys-recursive": "^2.1.2"
   },
   "devDependencies": {
     "@hyperledgendary/weftility": "^1.0.1-beta.0",

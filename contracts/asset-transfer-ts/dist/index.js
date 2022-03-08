@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.contracts = exports.AssetTransferContract = void 0;
+const assetTransfer_1 = require("./assetTransfer");
+var assetTransfer_2 = require("./assetTransfer");
+Object.defineProperty(exports, "AssetTransferContract", { enumerable: true, get: function () { return assetTransfer_2.AssetTransferContract; } });
+exports.contracts = [assetTransfer_1.AssetTransferContract];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBSUEsbURBQXdEO0FBRXhELGlEQUF3RDtBQUEvQyxzSEFBQSxxQkFBcUIsT0FBQTtBQUVqQixRQUFBLFNBQVMsR0FBVSxDQUFDLHFDQUFxQixDQUFDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxuICogU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEFwYWNoZS0yLjBcbiAqL1xuXG5pbXBvcnQgeyBBc3NldFRyYW5zZmVyQ29udHJhY3QgfSBmcm9tICcuL2Fzc2V0VHJhbnNmZXInO1xuXG5leHBvcnQgeyBBc3NldFRyYW5zZmVyQ29udHJhY3QgfSBmcm9tICcuL2Fzc2V0VHJhbnNmZXInO1xuXG5leHBvcnQgY29uc3QgY29udHJhY3RzOiBhbnlbXSA9IFtBc3NldFRyYW5zZmVyQ29udHJhY3RdO1xuIl19
