@@ -1,0 +1,1 @@
+{"version":"1.0.0","name":"asset-transfer-basic","dependencies":{"fabric-contract-api":{"version":"2.4.1"},"fabric-shim":{"version":"2.4.1"},"json-stringify-deterministic":{"version":"1.0.2"},"sort-keys-recursive":{"version":"2.1.2"},"source-map-support":{"version":"0.5.19"}}}

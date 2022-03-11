@@ -23,7 +23,7 @@
     "format": "prettier --write \"{src,test}/**/*.ts\"",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "build": "npm run format && npm run clean && npm run lint && echo Using TypeScript && tsc --version && tsc --pretty",
-    "package:cc": "./ccaas_pkg.sh",
+    "package:cc": "../ccaas_pkg.sh",
     "package:image": "npm run build && npm shrinkwrap && docker build -f ./Dockerfile -t asset-transfer-basic .",
     "release": "standard-version",
     "start": "fabric-chaincode-node start",
